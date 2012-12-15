@@ -515,6 +515,14 @@ static void AFNetworkReachabilityReleaseCallback(__unused const void *info) {}
     return operation;
 }
 
+- (AFHTTPRequestOperation *)HTTPRequestOperationWithURL:(NSURL *)url
+												success:(void (^)(AFHTTPRequestOperation *, id))success
+												failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure
+{
+	NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+	return [self HTTPRequestOperationWithRequest:urlRequest success:success failure:failure];
+}
+
 #pragma mark -
 
 - (void)enqueueHTTPRequestOperation:(AFHTTPRequestOperation *)operation {

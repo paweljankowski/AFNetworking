@@ -292,6 +292,10 @@ typedef enum {
                                                     success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
                                                     failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 
+- (AFHTTPRequestOperation *)HTTPRequestOperationWithURL:(NSURL *)url
+												success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+												failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
+
 ///----------------------------------------
 /// @name Managing Enqueued HTTP Operations
 ///----------------------------------------
